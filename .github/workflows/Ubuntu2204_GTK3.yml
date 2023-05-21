@@ -49,8 +49,9 @@ jobs:
   build:
 
     strategy:
+      fail-fast: false
       matrix:
-        configuration: [DebugGnome, ReleaseGnome]
+        configuration: [Debug, DebugGtk3, DebugNoGui, Release]
 
     runs-on: ubuntu-latest # For a list of available runner types, refer to
                              # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
