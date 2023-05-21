@@ -26,6 +26,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 using System;
+using Extensions;
 using Gtk;
 
 namespace Mono.Addins.GuiGtk3
@@ -44,7 +45,7 @@ namespace Mono.Addins.GuiGtk3
 		int rightPadding;
 		
 		bool useCustomColor;
-		Gdk.Color customColor;
+		HslColor customColor;
 		
 		public HeaderBox ()
 		{
@@ -152,7 +153,7 @@ namespace Mono.Addins.GuiGtk3
 			
 			if (GradientBackround) {
 				rect = new Gdk.Rectangle (Allocation.X, Allocation.Y, Allocation.Width, Allocation.Height);
-				HslColor gcol = useCustomColor ? customColor : Parent.Style.Background (Gtk.StateType.Normal);
+				HslColor gcol = useCustomColor ? customColor : Parent.Style.BackGround (Gtk.StateType.Normal);
 
 				cr.NewPath ();
 				cr.MoveTo (rect.X, rect.Y);

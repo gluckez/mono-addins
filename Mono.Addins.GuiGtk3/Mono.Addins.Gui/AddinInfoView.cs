@@ -34,6 +34,7 @@ using Mono.Unix;
 using System.Linq;
 using UI = Gtk.Builder.ObjectAttribute;
 using Gtk;
+using Extensions;
 
 namespace Mono.Addins.GuiGtk3
 {
@@ -394,7 +395,7 @@ namespace Mono.Addins.GuiGtk3
 		protected override void OnRealized ()
 		{
 			base.OnRealized ();
-			HslColor gcol = ebox.Style.Background (Gtk.StateType.Normal);
+			HslColor gcol = ebox.Style.BackGround (Gtk.StateType.Normal);
 			gcol.L -= 0.03;
 			ebox.ModifyBg (Gtk.StateType.Normal, gcol);
 			ebox2.ModifyBg (Gtk.StateType.Normal, gcol);
@@ -404,7 +405,7 @@ namespace Mono.Addins.GuiGtk3
 		
 		void SetComponentsBg ()
 		{
-			HslColor gcol = ebox.Style.Background (Gtk.StateType.Normal);
+			HslColor gcol = ebox.Style.BackGround (Gtk.StateType.Normal);
 			//gcol.L -= 0.03;
 			if (titleIcon != null)
 				titleIcon.ModifyBg (Gtk.StateType.Normal, gcol);

@@ -109,35 +109,44 @@ namespace Mono.Addins.GuiGtk3
 		{
 			return new HslColor (color);
 		}
-		
-		public HslColor (Color color) : this ()
+
+		public static implicit operator HslColor(RGBA rgba)
 		{
-			double r = color.Red   / (double)ushort.MaxValue;
-			double g = color.Green / (double)ushort.MaxValue;
-			double b = color.Blue  / (double)ushort.MaxValue;
+			return new HslColor (rgba.Red, rgba.Green, rgba.Blue); 
+		}
+		
+		public HslColor (Color color) : this (color.Red, color.Green, color.Blue)
+		{
+		}
+
+		public HslColor(double red, double green, double blue) : this()
+		{
+			double r = red / (double)ushort.MaxValue;
+			double g = green / (double)ushort.MaxValue;
+			double b = blue / (double)ushort.MaxValue;
 
 			double v = System.Math.Max (r, g);
 			v = System.Math.Max (v, b);
 
 			double m = System.Math.Min (r, g);
 			m = System.Math.Min (m, b);
-			
+
 			this.L = (m + v) / 2.0;
 			if (this.L <= 0.0)
 				return;
 			double vm = v - m;
 			this.S = vm;
-			
+
 			if (this.S > 0.0) {
 				this.S /= (this.L <= 0.5) ? (v + m) : (2.0 - v - m);
 			} else {
 				return;
 			}
-			
+
 			double r2 = (v - r) / vm;
 			double g2 = (v - g) / vm;
 			double b2 = (v - b) / vm;
-			
+
 			if (r == v) {
 				this.H = (g == m ? 5.0 + b2 : 1.0 - g2);
 			} else if (g == v) {
@@ -146,6 +155,7 @@ namespace Mono.Addins.GuiGtk3
 				this.H = (r == m ? 3.0 + g2 : 5.0 - r2);
 			}
 			this.H /= 6.0;
+
 		}
 		
 		public static double Brightness (Gdk.Color c)

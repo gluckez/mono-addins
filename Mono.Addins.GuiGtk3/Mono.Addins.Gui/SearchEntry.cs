@@ -56,7 +56,6 @@ namespace Mono.Addins.GuiGtk3
 			hbox.Show ();
 			hbox.Add (box);
 			Add (hbox);
-			
 			ModifyBg (StateType.Normal, entry.Style.Base (StateType.Normal));
 			iconClean.ModifyBg (StateType.Normal, entry.Style.Base (StateType.Normal));
 			iconFind.ModifyBg (StateType.Normal, entry.Style.Base (StateType.Normal));
