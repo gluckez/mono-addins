@@ -6,7 +6,6 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{B051C84E-48CC-448D-B00C-1525EB64E4BE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>OptionalModule</RootNamespace>
     <AssemblyName>OptionalModule</AssemblyName>
