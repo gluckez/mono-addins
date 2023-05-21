@@ -111,7 +111,7 @@ jobs:
 
     # Restore the application to populate the obj folder with RuntimeIdentifiers
     - name: Restore and build the application
-      run: msbuild Mono.Addins.sln /restore /p:Configuration=$env:Configuration
+      run: msbuild Mono.Addins.sln /restore /p:Configuration=${{ matrix.configuration }}
       env:
         Configuration: ${{ matrix.configuration }}
         
