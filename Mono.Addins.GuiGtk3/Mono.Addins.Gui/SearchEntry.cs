@@ -28,6 +28,7 @@
 //
 
 using System;
+using Extensions;
 using Gtk;
 
 namespace Mono.Addins.GuiGtk3
@@ -56,10 +57,9 @@ namespace Mono.Addins.GuiGtk3
 			hbox.Show ();
 			hbox.Add (box);
 			Add (hbox);
-			
-			ModifyBg (StateType.Normal, entry.Style.Base (StateType.Normal));
-			iconClean.ModifyBg (StateType.Normal, entry.Style.Base (StateType.Normal));
-			iconFind.ModifyBg (StateType.Normal, entry.Style.Base (StateType.Normal));
+			ModifyBg (StateType.Normal, entry.Style.Base (StateType.Normal).ToColor());
+			iconClean.ModifyBg (StateType.Normal, entry.Style.Base (StateType.Normal).ToColor ());
+			iconFind.ModifyBg (StateType.Normal, entry.Style.Base (StateType.Normal).ToColor ());
 			
 			iconClean.BorderWidth = 1;
 			iconClean.CanFocus = false;

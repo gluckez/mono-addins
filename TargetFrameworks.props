@@ -4,10 +4,9 @@
     <InMonoDevelopTree>False</InMonoDevelopTree>
     <InMonoDevelopTree Condition="Exists('$(MSBuildThisFileDirectory)..\..\msbuild\MonoDevelop.AfterCommon.props')">True</InMonoDevelopTree>
 
-    <DotNetFrameworkTarget>net472</DotNetFrameworkTarget>
     <DotNetCoreTarget>netstandard2.0</DotNetCoreTarget>
 
-    <TargetFrameworks>$(DotNetCoreTarget);$(DotNetFrameworkTarget)</TargetFrameworks>
+    <TargetFrameworks>$(DotNetCoreTarget);net5.0</TargetFrameworks>
 
     <AppendTargetFrameworkToOutputPath>true</AppendTargetFrameworkToOutputPath>
   </PropertyGroup>

@@ -29,9 +29,51 @@ namespace Extensions
 {
 	public static class StyleExtensions
 	{
+		/// This is only here to support obsolete api's, for now.
 		public static void PaintFocus(this Style style, Style st, Cairo.Context cr, StateType type, Widget wdg, string str, double x, double y, int width, int height)
 		{
 			wdg.StyleContext.RenderFocus (cr, x, y, width, height);
+		}
+
+		/// This is only here to support obsolete api's, for now.
+		public static Gdk.RGBA Base (this Style style, StateType stateType)
+		{
+			return style.Context.GetColor (stateType.ToStateFlags ());
+		}
+
+		/// This is only here to support obsolete api's, for now.
+		public static Gdk.RGBA BackGround (this Style style, StateType type)
+		{
+			return style.Context.GetColor(type.ToStateFlags());
+		}
+
+		public static StateFlags ToStateFlags(this StateType type)
+		{
+			switch (type) {
+				case StateType.Normal: return StateFlags.Normal;
+				default: return StateFlags.Normal;
+			}
+		}
+
+		public static Gdk.RGBA ToRGBA(this Gdk.Color color)
+		{
+			return new Gdk.RGBA () {
+				Red = color.Red,
+				Green = color.Green,
+				Blue = color.Blue
+			};
+		}
+
+		public static Gdk.Color ToColor (this Gdk.RGBA rgba)
+		{
+			ushort r = (ushort)rgba.Red;
+			ushort g = (ushort)rgba.Green;
+			ushort b = (ushort)rgba.Blue;
+			return new Gdk.Color () {
+				Red = r,
+				Green = g,
+				Blue = b
+			};
 		}
 	}
 }
