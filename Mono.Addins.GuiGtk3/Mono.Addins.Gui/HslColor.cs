@@ -112,7 +112,7 @@ namespace Mono.Addins.GuiGtk3
 
 		public static implicit operator HslColor(RGBA rgba)
 		{
-			return new HslColor (rgba.Red, rgba.Green, rgba.Blue); 
+			return new HslColor ((ushort)rgba.Red, (ushort)rgba.Green, (ushort)rgba.Blue); 
 		}
 		
 		public HslColor (Color color) : this (color.Red, color.Green, color.Blue)
