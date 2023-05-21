@@ -361,7 +361,7 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Mono.Posix.NETStandard" Version="1.0.0" />
-    <PackageReference Include="GtkSharp" Version="3.22.24.10" />
+    <PackageReference Include="GtkSharp" Version="3.24.24.95" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Mono.Addins.Gui\Extensions\" />
