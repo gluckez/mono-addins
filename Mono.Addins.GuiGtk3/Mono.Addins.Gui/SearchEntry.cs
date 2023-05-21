@@ -28,6 +28,7 @@
 //
 
 using System;
+using Extensions;
 using Gtk;
 
 namespace Mono.Addins.GuiGtk3
