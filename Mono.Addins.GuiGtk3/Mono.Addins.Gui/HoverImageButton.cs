@@ -27,6 +27,7 @@
  */
 
 using System;
+using Extensions;
 using Gtk;
 
 namespace Mono.Addins.GuiGtk3
@@ -154,7 +155,7 @@ namespace Mono.Addins.GuiGtk3
 			PropagateDraw (Child, cr);
 
             if(HasFocus && draw_focus) {
-                Style.PaintFocus(Style, cr, StateType.Normal, this, "button",
+				Style.PaintFocus(Style, cr, StateType.Normal, this, "button",
                     0, 0, Allocation.Width, Allocation.Height);
             }
         }

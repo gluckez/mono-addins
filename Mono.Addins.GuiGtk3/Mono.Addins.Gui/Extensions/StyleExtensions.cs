@@ -1,10 +1,10 @@
 //
-// AssemblyInfo.cs
+// StyleExtensions.cs
 //
 // Author:
-//       rpvn <${AuthorEmail}>
+//       glenn <>
 //
-// Copyright (c) 2013 rpvn
+// Copyright (c) 2023 
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -23,30 +23,15 @@
 // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
-using System.Reflection;
-using System.Runtime.CompilerServices;
-
-// Information about this assembly is defined by the following attributes. 
-// Change them to the values specific to your project.
-
-[assembly: AssemblyTitle("GuiTester")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("")]
-[assembly: AssemblyCopyright("rpvn")]
-[assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
-
-// The assembly version has the format "{Major}.{Minor}.{Build}.{Revision}".
-// The form "{Major}.{Minor}.*" will automatically update the build and revision,
-// and "{Major}.{Minor}.{Build}.*" will update just the revision.
-
-[assembly: AssemblyVersion("1.0.*")]
-
-// The following attributes are used to specify the signing key for the assembly, 
-// if desired. See the Mono documentation for more information about signing.
-
-//[assembly: AssemblyDelaySign(false)]
-//[assembly: AssemblyKeyFile("")]
-
+using Cairo;
+using Gtk;
+namespace Extensions
+{
+	public static class StyleExtensions
+	{
+		public static void PaintFocus(this Style style, Style st, Cairo.Context cr, StateType type, Widget wdg, string str, double x, double y, int width, int height)
+		{
+			wdg.StyleContext.RenderFocus (cr, x, y, width, height);
+		}
+	}
+}

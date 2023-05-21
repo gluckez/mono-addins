@@ -32,7 +32,12 @@ public partial class MainWindow: Gtk.Window
 	{
 		Build ();
 	}
-	
+
+	private void Build ()
+	{
+		// what should this be doing? Build() was once an API of either Gtk.Window or the other part of this partial class.
+	}
+
 	protected void OnDeleteEvent (object sender, DeleteEventArgs a)
 	{
 		Application.Quit ();
