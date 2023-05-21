@@ -62,7 +62,18 @@ namespace Extensions
 				Green = color.Green,
 				Blue = color.Blue
 			};
+		}
 
+		public static Gdk.Color ToColor (this Gdk.RGBA rgba)
+		{
+			ushort r = (ushort)rgba.Red;
+			ushort g = (ushort)rgba.Green;
+			ushort b = (ushort)rgba.Blue;
+			return new Gdk.Color () {
+				Red = r,
+				Green = g,
+				Blue = b
+			};
 		}
 	}
 }

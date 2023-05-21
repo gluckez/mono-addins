@@ -119,7 +119,7 @@ namespace Mono.Addins.GuiGtk3
 		{
 		}
 
-		public HslColor(double red, double green, double blue) : this()
+		public HslColor(ushort red, ushort green, ushort blue) : this()
 		{
 			double r = red / (double)ushort.MaxValue;
 			double g = green / (double)ushort.MaxValue;
