@@ -19,6 +19,7 @@ packages
 *.usertasks
 *.sln.cache
 /.vs
+/.idea
 
 # Generated stuff
 /mautil/mautil
