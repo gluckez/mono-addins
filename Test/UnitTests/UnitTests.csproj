@@ -7,7 +7,6 @@
     <RootNamespace>UnitTests</RootNamespace>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\mono-addins.snk</AssemblyOriginatorKeyFile>
-    <TargetFrameworks>net472;net6.0</TargetFrameworks>
     <LangVersion>9.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
